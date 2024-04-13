@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy8i5au4s3yw7"]
+
+[ext_resource type="Texture2D" uid="uid://c1qrwgxtjl7mi" path="res://Sprites/Sprite-0003.png" id="1_a1sx6"]
+[ext_resource type="Script" path="res://Scripts/dialog_base.gd" id="1_jek4b"]
+[ext_resource type="FontFile" uid="uid://cdl5ikx1kktly" path="res://Sprites/NotJamOldStyle11.ttf" id="2_ar41p"]
+[ext_resource type="Script" path="res://Scripts/dialogs_data.gd" id="4_ei0pt"]
+[ext_resource type="Script" path="res://Scripts/dialog_referencce.gd" id="5_fxdtv"]
+
+[node name="DialogBase" type="Control" node_paths=PackedStringArray("text", "speakers")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jek4b")
+text = NodePath("NinePatchRect/Text")
+speakers = NodePath("NinePatchRect/Name")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+modulate = Color(1, 1, 1, 0.956863)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.924
+anchor_right = 0.5
+anchor_bottom = 0.924
+offset_left = -80.0
+offset_top = -41.056
+offset_right = 80.0
+offset_bottom = -0.0559998
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_a1sx6")
+region_rect = Rect2(0, 0, 16.113, 16)
+
+[node name="Name" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.024
+anchor_right = 0.019
+anchor_bottom = 0.024
+offset_left = -0.0400002
+offset_top = 0.016
+offset_right = 40.96
+offset_bottom = 11.016
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("2_ar41p")
+theme_override_font_sizes/font_size = 11
+text = "name"
+
+[node name="Text" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.415
+anchor_right = 0.019
+anchor_bottom = 0.415
+offset_left = -0.0400002
+offset_top = -0.0150013
+offset_right = 28.96
+offset_bottom = 10.985
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("2_ar41p")
+theme_override_font_sizes/font_size = 11
+text = "text
+"
+
+[node name="DialogsData" type="Node" parent="."]
+script = ExtResource("4_ei0pt")
+
+[node name="Replica" type="Node" parent="DialogsData"]
+script = ExtResource("5_fxdtv")

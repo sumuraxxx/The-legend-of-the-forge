@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://032fso6rqy2u"]
+
+[ext_resource type="Script" path="res://Scripts/king.gd" id="1_6bp26"]
+[ext_resource type="Texture2D" uid="uid://bm41w1flggs0i" path="res://Sprites/pla2.png" id="2_2opi3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ap0s7"]
+radius = 6.0
+
+[node name="King" type="CharacterBody2D"]
+script = ExtResource("1_6bp26")
+start_point = Vector2(50, 50)
+end_point = Vector2(100, 100)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2opi3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ap0s7")

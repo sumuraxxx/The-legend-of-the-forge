@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccyyxxp2akfq2"]
+
+[ext_resource type="PackedScene" uid="uid://dy8i5au4s3yw7" path="res://Scenees/dialog_base.tscn" id="1_yqorj"]
+[ext_resource type="Script" path="res://Scripts/dialog_referencce.gd" id="2_m6r8n"]
+
+[node name="StartDialog" node_paths=PackedStringArray("text", "speakers") instance=ExtResource("1_yqorj")]
+text = NodePath("NinePatchRect/Text")
+speakers = NodePath("NinePatchRect/Name")
+
+[node name="Replica" parent="DialogsData" index="0"]
+speaker = "King"
+replica = "Hello, Blacksmiths"
+
+[node name="Replica2" type="Node" parent="DialogsData" index="1"]
+script = ExtResource("2_m6r8n")
+speaker = "Blacksmiths"
+replica = "What is necessary"
+
+[node name="Replica3" type="Node" parent="DialogsData" index="2"]
+script = ExtResource("2_m6r8n")
+speaker = "King"
+replica = "You have to help me."
+
+[node name="Replica4" type="Node" parent="DialogsData" index="3"]
+script = ExtResource("2_m6r8n")
+speaker = "BlackSmiths"
+replica = "With what?"
+
+[node name="Replica5" type="Node" parent="DialogsData" index="4"]
+script = ExtResource("2_m6r8n")
+speaker = "King"
+replica = "Create the Sword of the Gods"
+
+[node name="Replica6" type="Node" parent="DialogsData" index="5"]
+script = ExtResource("2_m6r8n")
+speaker = "Blacksmiths"
+replica = "What will I get for this"
+
+[node name="Replica7" type="Node" parent="DialogsData" index="6"]
+script = ExtResource("2_m6r8n")
+speaker = "King"
+replica = "Nothing"
+
+[node name="Replica8" type="Node" parent="DialogsData" index="7"]
+script = ExtResource("2_m6r8n")
+speaker = "Blacksmiths"
+replica = "Great, I'll take it up."

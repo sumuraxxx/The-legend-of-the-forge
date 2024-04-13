@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://dga5hdm5jbb8n"]
+
+[ext_resource type="Script" path="res://Player/PlayerScripts/player.gd" id="1_ex8yh"]
+[ext_resource type="Texture2D" uid="uid://dtei33pqlyoe3" path="res://Player/sprites/pla.png" id="2_4ebjv"]
+[ext_resource type="Script" path="res://FSM/Scripts/finite_state_machine.gd" id="2_hul6s"]
+[ext_resource type="Script" path="res://Player/PlayerScripts/player_walk_state.gd" id="3_31xxb"]
+[ext_resource type="Script" path="res://Player/PlayerScripts/player_idle_state.gd" id="4_mc8vb"]
+[ext_resource type="PackedScene" uid="uid://3jfnyyjjktqe" path="res://Scenees/recipe_ui.tscn" id="6_cgvwg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_he1n0"]
+radius = 6.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ex8yh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_he1n0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4ebjv")
+
+[node name="FSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_hul6s")
+initial_state = NodePath("PlayerWalkState")
+
+[node name="PlayerWalkState" type="Node" parent="FSM"]
+script = ExtResource("3_31xxb")
+
+[node name="PlayerIdleState" type="Node" parent="FSM"]
+script = ExtResource("4_mc8vb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RecipeUi" parent="CanvasLayer" instance=ExtResource("6_cgvwg")]
+visible = false
