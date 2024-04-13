@@ -6,7 +6,7 @@ signal king_init
 @export var king: PackedScene
 
 func _ready() -> void:
-	if player.can_watch_start_dialog:
+	if !player.can_watch_start_dialog:
 		var king = king.instantiate()
 		king.global_position = $Door.global_position
 		$CanvasLayer/StartDialog.responsible_for_the_beginning = king
@@ -15,4 +15,5 @@ func _ready() -> void:
 		king.start_dialog = $CanvasLayer/StartDialog
 		add_child(king)
 		emit_signal("king_init")
+		player.force_change_watch_animation_state()
 		
