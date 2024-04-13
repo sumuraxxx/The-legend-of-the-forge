@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://csn2ilk6ayko"]
+
+[ext_resource type="Texture2D" uid="uid://1ymnsa4gpowf" path="res://Sprites/arm_projectile.png" id="1_ujem0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myqg2"]
+size = Vector2(34, 11)
+
+[node name="BulletGolem" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ujem0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(27, -12.5)
+shape = SubResource("RectangleShape2D_myqg2")
