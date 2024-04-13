@@ -26,3 +26,20 @@ shape = SubResource("CircleShape2D_0we2v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1, -11)
 shape = SubResource("RectangleShape2D_4ilqi")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, -40)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-41, -9)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(42, -9)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

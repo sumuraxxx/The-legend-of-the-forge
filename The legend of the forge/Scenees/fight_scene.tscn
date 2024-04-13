@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqidrrcmh0t6r"]
+[gd_scene load_steps=8 format=3 uid="uid://bqidrrcmh0t6r"]
 
 [ext_resource type="Texture2D" uid="uid://b68hvw7kb4ke" path="res://123.png" id="1_sat76"]
 [ext_resource type="Texture2D" uid="uid://wujnd3sxe2ws" path="res://Sprites/TX Tileset Grass.png" id="2_kqw03"]
 [ext_resource type="PackedScene" uid="uid://dga5hdm5jbb8n" path="res://Player/player.tscn" id="3_5dn6n"]
+[ext_resource type="PackedScene" uid="uid://di5jnbnqi0x5k" path="res://Scenees/boss_golem.tscn" id="4_suh8d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0d2jf"]
 texture = ExtResource("2_kqw03")
@@ -17,8 +18,10 @@ texture = ExtResource("2_kqw03")
 1:0/0/physics_layer_0/angular_velocity = 0.0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, 8, -8, 8)
 2:0/0 = 0
+2:0/0/modulate = Color(1, 1, 1, 0)
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
@@ -787,6 +790,11 @@ texture = ExtResource("2_kqw03")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0d2jf")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_p2wfl"]
+vertices = PackedVector2Array(178, 98, 178, 10, 222, 10, 222, 134, 10, 134, 62, 98, 10, 10, 62, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(5, 4, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 72, 0, 72, 80, 72, 88, 168, 88, 168, 0, 232, 0, 232, 144, 0, 144)])
+
 [node name="FightScene" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -804,7 +812,13 @@ position = Vector2(120, 64)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kskyc")
 format = 2
-layer_0/tile_data = PackedInt32Array(458764, 0, 1, 393228, 0, 1, 393218, 65536, 1, 458754, 65536, 1, 524299, 65536, 0, 524298, 65536, 0, 524297, 65536, 0, 524296, 65536, 0, 524295, 65536, 0, 524294, 65536, 0, 524293, 65536, 0, 524292, 65536, 0, 524291, 65536, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0)
+layer_0/tile_data = PackedInt32Array(458764, 0, 1, 393228, 0, 1, 393218, 65536, 1, 458754, 65536, 1, 524299, 65536, 0, 524298, 65536, 0, 524297, 65536, 0, 524296, 65536, 0, 524295, 65536, 0, 524294, 65536, 0, 524293, 65536, 0, 524292, 65536, 0, 524291, 65536, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327682, 131072, 0, 524290, 131072, 0, 327692, 131072, 0, 524300, 131072, 0)
 
 [node name="Player" parent="." instance=ExtResource("3_5dn6n")]
 position = Vector2(120, 112)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_p2wfl")
+
+[node name="BossGolem" parent="." instance=ExtResource("4_suh8d")]
+position = Vector2(120, 64)

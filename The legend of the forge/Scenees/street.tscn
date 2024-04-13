@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bbho678eb2vrj" path="res://Sprites/pixel-art-house.png" id="2_qf33h"]
 [ext_resource type="PackedScene" uid="uid://dqmp4w7b6khbh" path="res://Scenees/door.tscn" id="3_nu7hb"]
 [ext_resource type="Texture2D" uid="uid://4gyuymtlmja3" path="res://Sprites/TX Props.png" id="3_s7nrg"]
-[ext_resource type="Script" path="res://Scenees/door_in_house.gd" id="4_j4p0t"]
+[ext_resource type="Script" path="res://Scripts/door_in_house.gd" id="4_j4p0t"]
 [ext_resource type="Texture2D" uid="uid://bdrddjubxvo8a" path="res://Sprites/Forest Tileset.png" id="4_l3qrr"]
 [ext_resource type="PackedScene" uid="uid://dga5hdm5jbb8n" path="res://Player/player.tscn" id="5_antyx"]
 [ext_resource type="Script" path="res://Scripts/follow_camera.gd" id="6_yo4jk"]

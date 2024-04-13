@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/follow_camera.gd" id="4_hv8ma"]
 [ext_resource type="PackedScene" uid="uid://ccyyxxp2akfq2" path="res://Scenees/start_dialog.tscn" id="5_kpp4s"]
 [ext_resource type="PackedScene" uid="uid://dqmp4w7b6khbh" path="res://Scenees/door.tscn" id="6_v4dnv"]
-[ext_resource type="Script" path="res://Scenees/door_in_outside.gd" id="8_26hup"]
+[ext_resource type="Script" path="res://Scripts/door_in_outside.gd" id="8_26hup"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0nh8l"]
 texture = ExtResource("2_1u2il")
