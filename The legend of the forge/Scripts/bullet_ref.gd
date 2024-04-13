@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Bullet
 
-const SPEED = 60
+const SPEED = 50
 
 var target: CharacterBody2D
 
