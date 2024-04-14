@@ -18,7 +18,6 @@ func classic_attack() -> void:
 		var id = randi_range(0, len(spawn_points) - 1)
 		var bullet = bullet_scene.instantiate()
 		bullet.global_position = spawn_points[id].global_position
-		print(id)
 		get_parent().add_child(bullet)
 		bullet.connect("body_destroyed", body_destroyed)
 		count_bullets += 1
