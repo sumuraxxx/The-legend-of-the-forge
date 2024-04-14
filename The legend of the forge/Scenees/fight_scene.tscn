@@ -822,3 +822,4 @@ navigation_polygon = SubResource("NavigationPolygon_p2wfl")
 
 [node name="BossGolem" parent="." instance=ExtResource("4_suh8d")]
 position = Vector2(120, 64)
+max_bullets = 3

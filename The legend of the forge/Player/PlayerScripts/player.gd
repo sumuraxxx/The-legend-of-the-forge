@@ -22,3 +22,4 @@ func _processing_end_of_start_dialog() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Bullet:
 		body.queue_free()
+		body.emit_signal("body_destroyed")

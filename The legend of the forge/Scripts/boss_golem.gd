@@ -20,8 +20,13 @@ func classic_attack() -> void:
 		bullet.global_position = spawn_points[id].global_position
 		print(id)
 		get_parent().add_child(bullet)
+		bullet.connect("body_destroyed", body_destroyed)
 		count_bullets += 1
 		
+
+func body_destroyed() -> void:
+	count_bullets -= 1
 		
+				
 func _on_timer_timeout() -> void:
 	classic_attack()

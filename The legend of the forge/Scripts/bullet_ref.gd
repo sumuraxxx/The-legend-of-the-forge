@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Bullet
 
+signal body_destroyed
+
 const SPEED = 50
 
 var target: CharacterBody2D
